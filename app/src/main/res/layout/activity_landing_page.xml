@@ -8,7 +8,11 @@
     tools:context=".LandingPage">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/landingPageTv"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:typeface="serif"
+        app:fontFamily="cursive" />
 </android.support.constraint.ConstraintLayout>
