@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Assignment</string>
+    <string name="usernameHint">Enter usename</string>
+    <string name="passwordHint">Enter password</string>
 </resources>
