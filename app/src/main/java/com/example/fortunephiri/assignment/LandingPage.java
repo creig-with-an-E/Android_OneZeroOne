@@ -31,8 +31,10 @@ public class LandingPage extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//
-
+                if(i==0){
+//                    Intent intent = new Intent(getApplicationContext(),NewActivity.class);
+//                    startActivity(intent);
+                }
             }
         });
          }
