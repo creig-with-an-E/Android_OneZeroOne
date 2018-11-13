@@ -3,6 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="youtubeRed">#ed3833</color>
+    <color name="youtubeRed">#FF2B56</color>
+    <color name="colorGreen">#3BD798</color>
+    <color name="colorBlue">#00B0C8</color>
 
 </resources>
