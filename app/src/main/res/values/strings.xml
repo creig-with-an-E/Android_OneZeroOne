@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Assignment</string>
+    <string name="app_name">Schedule Assistant</string>
     <string name="usernameHint">Enter usename</string>
     <string name="passwordHint">Enter password</string>
     <string name="landingPageTv">Landing Page</string>

@@ -46,6 +46,7 @@ public class LandingPage extends AppCompatActivity {
                     case 0:
                         Intent intentGSchedule = new Intent(getApplicationContext(),GeneralScheduleActivity.class);
                         startActivity(intentGSchedule); //handles General schedule intent
+                        break;
                     case 1:
                         Intent intentMySch = new Intent(getApplicationContext(),MyScheduleActivity.class);
                         startActivity(intentMySch);     //starting My Schedule intent
