@@ -9,21 +9,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-                  android:launchMode="singleTask"
-            >
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LandingPage"
-                   android:launchMode="singleTask"/>
-        <activity android:name=".MyScheduleActivity"
-                   android:launchMode="singleTask"/>
-        <activity android:name=".GeneralScheduleActivity"
+        <activity
+                  android:name=".LandingPage"
                   android:launchMode="singleTask" />
+        <activity
+                  android:name=".MyScheduleActivity"
+                  android:launchMode="singleTask" />
+        <activity
+                  android:name=".GeneralScheduleActivity"
+                  android:launchMode="singleTask" />
+        <activity android:name=".SpeakersActivity" />
+        <activity android:name=".MapsActivity"
+                  android:launchMode="singleTask"/>
+        <activity android:name=".ListAttendeesActivity"
+                  android:launchMode="singleTask"/>
+        <activity android:name=".SponsorsActivity"
+                  android:launchMode="singleTask"/>
     </application>
 
 </manifest>

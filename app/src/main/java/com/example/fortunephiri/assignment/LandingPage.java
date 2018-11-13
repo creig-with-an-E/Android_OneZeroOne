@@ -1,6 +1,7 @@
 package com.example.fortunephiri.assignment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,8 +18,8 @@ import java.util.ArrayList;
 public class LandingPage extends AppCompatActivity {
 
     private ArrayList<String> textLink = new ArrayList <String>() ;
-    private int [] imageLink ={R.drawable.calendar,R.drawable.calendar,R.drawable.calendar,R.drawable.calendar,R.drawable.calendar,R.drawable.calendar,R.drawable.twitter};
-
+    private int [] imageLink ={R.drawable.calendar,R.drawable.diary,R.drawable.calendar,R.drawable.calendar,R.drawable.calendar,R.drawable.calendar,R.drawable.twitter};
+                                //generalSchedule  ,My schedule    ,Speakers            ,Maps               ,List of attendees ,   Sponsors        ,twitter
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +53,24 @@ public class LandingPage extends AppCompatActivity {
                         startActivity(intentMySch);     //starting My Schedule intent
                         break;
                     case 2:
-                        Intent intentSpeaker = new Intent(getApplicationContext(),MyScheduleActivity.class);
+                        Intent intentSpeaker = new Intent(getApplicationContext(),SpeakersActivity.class);
                         startActivity(intentSpeaker);     //starting Speakers intent
+                        break;
+                    case 3:
+                        Intent intentMaps = new Intent(getApplicationContext(),MapsActivity.class);
+                        startActivity(intentMaps);     //starting Maps intent
+                        break;
+                    case 4:
+                        Intent intentAttendees = new Intent(getApplicationContext(),ListAttendeesActivity.class);
+                        startActivity(intentAttendees);     //starting List of attendees intent
+                        break;
+                    case 5:
+                        Intent intentSponsors = new Intent(getApplicationContext(),SponsorsActivity.class);
+                        startActivity(intentSponsors);     //starting Sponsors intent
+                        break;
+                    case 6:
+                        Intent intentTwitter = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com"));
+                        startActivity(intentTwitter);     //starting Sponsors intent
                         break;
                     default:
                         break;
