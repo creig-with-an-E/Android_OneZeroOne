@@ -44,11 +44,15 @@ public class LandingPage extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch(i){
                     case 0:
-                        Intent intentGSchedule = new Intent(getApplicationContext(),MyScheduleActivity.class);
+                        Intent intentGSchedule = new Intent(getApplicationContext(),GeneralScheduleActivity.class);
                         startActivity(intentGSchedule); //handles General schedule intent
                     case 1:
                         Intent intentMySch = new Intent(getApplicationContext(),MyScheduleActivity.class);
                         startActivity(intentMySch);     //starting My Schedule intent
+                        break;
+                    case 2:
+                        Intent intentSpeaker = new Intent(getApplicationContext(),MyScheduleActivity.class);
+                        startActivity(intentSpeaker);     //starting Speakers intent
                         break;
                     default:
                         break;
