@@ -19,21 +19,25 @@
             </intent-filter>
         </activity>
         <activity
-                  android:name=".LandingPage"
-                  android:launchMode="singleTask" />
+            android:name=".LandingPage"
+            android:launchMode="singleTask" />
         <activity
-                  android:name=".MyScheduleActivity"
-                  android:launchMode="singleTask" />
+            android:name=".MyScheduleActivity"
+            android:launchMode="singleTask" />
         <activity
-                  android:name=".GeneralScheduleActivity"
-                  android:launchMode="singleTask" />
+            android:name=".GeneralScheduleActivity"
+            android:launchMode="singleTask" />
         <activity android:name=".SpeakersActivity" />
-        <activity android:name=".MapsActivity"
-                  android:launchMode="singleTask"/>
-        <activity android:name=".ListAttendeesActivity"
-                  android:launchMode="singleTask"/>
-        <activity android:name=".SponsorsActivity"
-                  android:launchMode="singleTask"/>
+        <activity
+            android:name=".MapsActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ListAttendeesActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".SponsorsActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".SurveyActivity"></activity>
     </application>
 
 </manifest>

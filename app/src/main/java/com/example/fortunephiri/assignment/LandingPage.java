@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class LandingPage extends AppCompatActivity {
 
     private ArrayList<String> textLink = new ArrayList <String>() ;
-    private int [] imageLink ={R.drawable.calendar,R.drawable.profile,R.drawable.calendar,R.drawable.map,R.drawable.calendar,R.drawable.calendar,R.drawable.twitter};
+    private int [] imageLink ={R.drawable.schedule,R.drawable.profile,R.drawable.speaker,R.drawable.map,R.drawable.attendees,R.drawable.sponsors,R.drawable.twitter};
                                 //generalSchedule  ,My schedule    ,Speakers            ,Maps               ,List of attendees ,   Sponsors        ,twitter
     @Override
     protected void onCreate(Bundle savedInstanceState) {
