@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class LandingPage extends AppCompatActivity {
 
     private ArrayList<String> textLink = new ArrayList <String>() ;
-    private int [] imageLink ={R.drawable.schedule,R.drawable.profile,R.drawable.speaker,R.drawable.map,R.drawable.attendees,R.drawable.sponsors,R.drawable.twitter};
+    private int [] imageLink ={R.drawable.schedule,R.drawable.profile,R.drawable.speaker,R.drawable.map,R.drawable.attendees,R.drawable.sponsors,R.drawable.twitter,R.drawable.redclocks};
                                 //generalSchedule  ,My schedule    ,Speakers            ,Maps               ,List of attendees ,   Sponsors        ,twitter
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class LandingPage extends AppCompatActivity {
         textLink.add("List of attendees");              //index:4  ->List attendees
         textLink.add("Sponsors");                       //index:5  ->Sponsors
         textLink.add("Twitter");                        //index:6  ->twitter
+        textLink.add("Survey");
 
 
 
@@ -71,6 +72,10 @@ public class LandingPage extends AppCompatActivity {
                     case 6:
                         Intent intentTwitter = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com"));
                         startActivity(intentTwitter);     //starting Sponsors intent
+                        break;
+                    case 7:
+                        Intent intentSurvey = new Intent(getApplicationContext(), SurveyActivity.class);
+                        startActivity(intentSurvey);     //starting Survey intent
                         break;
                     default:
                         break;

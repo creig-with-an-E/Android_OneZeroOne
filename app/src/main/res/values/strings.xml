@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">Schedule Assistant</string>
-    <string name="usernameHint">Enter usename</string>
+    <string name="usernameHint">Enter username</string>
     <string name="passwordHint">Enter password</string>
     <string name="landingPageTv">Landing Page</string>
     <string name="altLogin">--------------------OR--------------------</string>
+    <string name="survey_text">Please tell us about your experience \n Please note all responses are private and confidential</string>
+    <string name="question1">What did you like most about the event</string>
+    <string name="question2">What did you dislike about the event</string>
+    <string name="question3">Would you recommend the event to a friend</string>
 </resources>
