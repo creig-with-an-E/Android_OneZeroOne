@@ -8,4 +8,5 @@
     <string name="question1">What did you like most about the event</string>
     <string name="question2">What did you dislike about the event</string>
     <string name="question3">Would you recommend the event to a friend</string>
+
 </resources>
