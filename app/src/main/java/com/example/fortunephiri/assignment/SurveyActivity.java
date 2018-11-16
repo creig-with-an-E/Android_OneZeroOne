@@ -11,8 +11,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -39,13 +40,13 @@ public class SurveyActivity extends AppCompatActivity {
 //               data.append(q3.getText().toString() + "\n");
 
 
-        final String FILE_NAME = "survey.json";
-        FileOutputStream fos =null;
+        final String FILE_NAME = "survey.txt";
+        OutputStream fos =null;
         MyJSON newJson = new MyJSON();
         try {
-            String data=newJson.makeJSON(timestamp,q1.getText().toString(),q2.getText().toString(),q3.getText().toString()).toString();
+            JSONObject data=newJson.makeJSON(timestamp,q1.getText().toString(),q2.getText().toString(),q3.getText().toString());
             fos = openFileOutput(FILE_NAME,MODE_PRIVATE);
-            fos.write(data.getBytes());
+            fos.write(data.toString().getBytes());
 
             q1.getText().clear();
             q2.getText().clear();
