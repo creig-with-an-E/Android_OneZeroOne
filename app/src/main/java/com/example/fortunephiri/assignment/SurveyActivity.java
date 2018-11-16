@@ -2,13 +2,19 @@ package com.example.fortunephiri.assignment;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class SurveyActivity extends AppCompatActivity {
@@ -25,15 +31,22 @@ public class SurveyActivity extends AppCompatActivity {
     }
 
     public void save(View view) {
-        String data =  q1.getText().toString() + "\n";
-               data += q3.getText().toString() + "\n";
-               data += q2.getText().toString() + "\n";
+//        StringBuilder data= new StringBuilder();
+        String timestamp=new SimpleDateFormat("yyyy-MM-dd.HH:mm:ss").format(new Date());
+//        data.append(timestamp);
+//               data.append(q1.getText().toString() + "\n");
+//               data.append(q2.getText().toString() + "\n");
+//               data.append(q3.getText().toString() + "\n");
 
-        final String FILE_NAME = "survey.txt";
+
+        final String FILE_NAME = "survey.json";
         FileOutputStream fos =null;
+        MyJSON newJson = new MyJSON();
         try {
+            String data=newJson.makeJSON(timestamp,q1.getText().toString(),q2.getText().toString(),q3.getText().toString()).toString();
             fos = openFileOutput(FILE_NAME,MODE_PRIVATE);
             fos.write(data.getBytes());
+
             q1.getText().clear();
             q2.getText().clear();
             q3.getText().clear();
@@ -51,5 +64,23 @@ public class SurveyActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+
+    public class MyJSON extends JSONObject {
+
+        public JSONObject makeJSON(String timeStamp, String q1, String q2, String q3){
+            JSONObject json = new JSONObject();
+            try {
+                json.put("timestamp",timeStamp);
+                json.put("question1",q1);
+                json.put("question2",q2);
+                json.put("question3",q3);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            Log.d("json",json.toString());
+            return json;
+        }
+
     }
 }
