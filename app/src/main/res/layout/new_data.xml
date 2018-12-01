@@ -15,7 +15,13 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:lineSpacingExtra="8sp"
         android:text="firstname"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:fontFamily="serif"
         app:layout_constraintEnd_toStartOf="@+id/lastname"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,6 +37,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="lastname"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/firstname"
         app:layout_constraintTop_toTopOf="parent" />

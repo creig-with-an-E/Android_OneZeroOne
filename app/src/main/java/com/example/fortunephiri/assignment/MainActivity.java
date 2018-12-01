@@ -1,13 +1,12 @@
 package com.example.fortunephiri.assignment;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,8 +21,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),LandingPage.class);
                 startActivity(intent);
+
             }
         });
+            DatabaseHelper db = new DatabaseHelper(getApplicationContext());
+            Cursor cursor = db.getData();
+            Log.d("columns",String.valueOf(cursor.getColumnName(2)));
+
 
     }
 }

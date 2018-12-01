@@ -32,21 +32,18 @@ public class SurveyActivity extends AppCompatActivity {
     }
 
     public void save(View view) {
-//        StringBuilder data= new StringBuilder();
         String timestamp=new SimpleDateFormat("yyyy-MM-dd.HH:mm:ss").format(new Date());
-//        data.append(timestamp);
-//               data.append(q1.getText().toString() + "\n");
-//               data.append(q2.getText().toString() + "\n");
-//               data.append(q3.getText().toString() + "\n");
-
+        String space ="\t";
 
         final String FILE_NAME = "survey.txt";
         OutputStream fos =null;
         MyJSON newJson = new MyJSON();
         try {
-            JSONObject data=newJson.makeJSON(timestamp,q1.getText().toString(),q2.getText().toString(),q3.getText().toString());
-            fos = openFileOutput(FILE_NAME,MODE_PRIVATE);
-            fos.write(data.toString().getBytes());
+            //JSONObject data=newJson.makeJSON(timestamp,q1.getText().toString(),q2.getText().toString(),q3.getText().toString());
+            StringBuilder sb = new StringBuilder();
+            sb.append("\n" + timestamp + "\t").append(q1.getText().toString() + space).append(q2.getText().toString() + space).append(q3.getText().toString());
+            fos = openFileOutput(FILE_NAME,MODE_APPEND);
+            fos.write(sb.toString().getBytes());
 
             q1.getText().clear();
             q2.getText().clear();

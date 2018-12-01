@@ -31,16 +31,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         Log.d("mina","onCreate database method call");
         String createTable ="Create table if not exists " + tableName + " (id Integer primary key autoincrement ," +
-                firstnameCol + " Text ," + lastnameCol + "Text ," + affiliationCol + " Text ," +
+                firstnameCol + " Text ," + lastnameCol + " Text ," + affiliationCol + " Text ," +
                 email + " Text, " + bio + " Text )";
-        dropTable();
         db.execSQL(createTable);
-        db.execSQL(String.format("insert into %s values('Sam','Smith','UNICEF','email@gmail.com','lead practitioner')", tableName));
-        db.execSQL(String.format("insert into %s values('Lisa','Vio','UNICEF','eml@gmail.com','practitioner')", tableName));
-        db.execSQL(String.format("insert into %s values('Creig','Phiri','Canker Corp','fortunephiri@gmail.com','Entreprenuer')", tableName));
-        db.execSQL(String.format("insert into %s values('Omie','Mdlo','Diaman Corp','email@gmail.com','Gemologist')", tableName));
-        db.execSQL(String.format("insert into %s values('Some','One','UNICEF','email@gmail.com','lead practitioner')", tableName));
-        db.execSQL(String.format("insert into %s values('John','Doe','UNICEF','email@gmail.com','lead practitioner')", tableName));
+        db.execSQL(String.format("insert into %s values(1,'Sam','Smith','UNICEF','email@gmail.com','lead practitioner')", tableName));
+        db.execSQL(String.format("insert into %s values(2,'Lisa','Vio','UNICEF','eml@gmail.com','practitioner')", tableName));
+        db.execSQL(String.format("insert into %s values(3,'Creig','Phiri','Canker Corp','fortunephiri@gmail.com','Entreprenuer')", tableName));
+        db.execSQL(String.format("insert into %s values(4,'Omie','Mdlo','Diaman Corp','email@gmail.com','Gemologist')", tableName));
+        db.execSQL(String.format("insert into %s values(5,'Some','One','UNICEF','email@gmail.com','lead practitioner')", tableName));
+        db.execSQL(String.format("insert into %s values(6,'John','Doe','UNICEF','email@gmail.com','lead practitioner')", tableName));
     }
 
     @Override
@@ -58,11 +57,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
-    public void dropTable(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("drop table if exists " + tableName);
-        Log.i("DropTable","Table was dropped ekse");
-    }
+//    public void dropTable(){
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        db.execSQL("drop table if exists " + tableName);
+//        Log.i("DropTable","Table was dropped ekse");
+//    }
 
 
 
