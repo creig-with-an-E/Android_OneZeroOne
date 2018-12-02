@@ -37,9 +37,15 @@
         <activity
             android:name=".SponsorsActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".SurveyActivity" />
-        <activity android:name=".GridViewMenuActivity" />
-        <activity android:name=".ListActivity"></activity>
+        <activity android:name=".SurveyActivity"
+            android:launchMode="singleTask"
+            />
+        <activity android:name=".GridViewMenuActivity"
+            android:launchMode="singleTask"
+            />
+        <activity android:name=".ListActivity"
+            android:launchMode="singleTask"
+            />
     </application>
 
 </manifest>

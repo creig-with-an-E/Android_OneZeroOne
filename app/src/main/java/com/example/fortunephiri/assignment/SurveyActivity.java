@@ -17,12 +17,16 @@ import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import helperClasses.SharedPreferenceConfig;
+
 
 public class SurveyActivity extends AppCompatActivity {
     EditText q1, q2,q3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferenceConfig preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
+        setTitle("Schedule Assistant        *****" + preferenceConfig.readUserNamePref().toUpperCase() + "***");
         setContentView(R.layout.activity_survey);
 
         q1 = findViewById(R.id.question1);

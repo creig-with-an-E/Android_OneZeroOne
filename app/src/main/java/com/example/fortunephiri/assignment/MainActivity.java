@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 import helperClasses.SharedPreferenceConfig;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,17 +26,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
-//                preferenceConfig.writeUsernamePref();
                 username = findViewById(R.id.usernameTv);
                 if(username.getText().toString().length() !=0){
                     Intent intent = new Intent(getApplicationContext(),LandingPage.class);
+                    preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
+                    preferenceConfig.writeUsernamePref(username.getText().toString());
                     startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(),"Username can not be empty",Toast.LENGTH_LONG).show();
                 }
-
-
             }
         });
 
@@ -43,6 +42,6 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursor = db.getData();
         Log.d("columns",String.valueOf(cursor.getColumnName(2)));
 
-
     }
+
 }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -14,15 +15,19 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import helperClasses.SharedPreferenceConfig;
+
 
 public class LandingPage extends AppCompatActivity {
-
+    SharedPreferenceConfig preferenceConfig;
     private ArrayList<String> textLink = new ArrayList <String>() ;
     private int [] imageLink ={R.drawable.schedule,R.drawable.profile,R.drawable.speaker,R.drawable.map,R.drawable.attendees,R.drawable.sponsors,R.drawable.twitter,R.drawable.sponsors};
                                 //generalSchedule  ,My schedule    ,Speakers            ,Maps               ,List of attendees ,   Sponsors        ,twitter
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
+        setTitle("Schedule Assistant        *****" + preferenceConfig.readUserNamePref().toUpperCase() + "***");
         setContentView(R.layout.activity_landing_page);
         //creating the list
         textLink.add("General Schedule");                //index:0 ->General Schedule
@@ -34,9 +39,6 @@ public class LandingPage extends AppCompatActivity {
         textLink.add("Twitter");                        //index:6  ->twitter
         textLink.add("Survey");
 
-
-
-
         ListView listView = findViewById(R.id.listview);
         CustomAdapter customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
@@ -44,29 +46,29 @@ public class LandingPage extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                switch(i){
+                switch (i) {
                     case 0:
-                        Intent intentGSchedule = new Intent(getApplicationContext(),GeneralScheduleActivity.class);
+                        Intent intentGSchedule = new Intent(getApplicationContext(), GeneralScheduleActivity.class);
                         startActivity(intentGSchedule); //handles General schedule intent
                         break;
                     case 1:
-                        Intent intentMySch = new Intent(getApplicationContext(),MyScheduleActivity.class);
+                        Intent intentMySch = new Intent(getApplicationContext(), MyScheduleActivity.class);
                         startActivity(intentMySch);     //starting My Schedule intent
                         break;
                     case 2:
-                        Intent intentSpeaker = new Intent(getApplicationContext(),SpeakersActivity.class);
+                        Intent intentSpeaker = new Intent(getApplicationContext(), SpeakersActivity.class);
                         startActivity(intentSpeaker);     //starting Speakers intent
                         break;
                     case 3:
-                        Intent intentMaps = new Intent(getApplicationContext(),MapsActivity.class);
+                        Intent intentMaps = new Intent(getApplicationContext(), MapsActivity.class);
                         startActivity(intentMaps);     //starting Maps intent
                         break;
                     case 4:
-                        Intent intentAttendees = new Intent(getApplicationContext(),ListAttendeesActivity.class);
+                        Intent intentAttendees = new Intent(getApplicationContext(), ListAttendeesActivity.class);
                         startActivity(intentAttendees);     //starting List of attendees intent
                         break;
                     case 5:
-                        Intent intentSponsors = new Intent(getApplicationContext(),SponsorsActivity.class);
+                        Intent intentSponsors = new Intent(getApplicationContext(), SponsorsActivity.class);
                         startActivity(intentSponsors);     //starting Sponsors intent
                         break;
                     case 6:
@@ -82,7 +84,8 @@ public class LandingPage extends AppCompatActivity {
                 }
             }
         });
-         }
+        invalidateOptionsMenu();
+    }
 
     private class CustomAdapter extends BaseAdapter {
         @Override
