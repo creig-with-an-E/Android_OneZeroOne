@@ -9,4 +9,6 @@
     <string name="question2">What did you dislike about the event</string>
     <string name="question3">Would you recommend the event to a friend</string>
 
+    <string name="username_preference">com.example.fortunephiri.assignment_UserName_preference</string>
+    <string name="login_preference_name">com.example.fortunephiri.assignment_Login_preference</string>
 </resources>
