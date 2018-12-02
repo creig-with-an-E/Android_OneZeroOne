@@ -8,7 +8,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import helperClasses.SharedPreferenceConfig;
+
 public class MainActivity extends AppCompatActivity {
+    SharedPreferenceConfig preferenceConfig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
             btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(getApplicationContext(),LandingPage.class);
                 startActivity(intent);
 

@@ -12,8 +12,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 
-import com.example.fortunephiri.assignment.database.AppDatabase;
-
 public class SpeakersActivity extends AppCompatActivity {
 
     ListView listview;
@@ -56,7 +54,6 @@ public class SpeakersActivity extends AppCompatActivity {
             }
         });
 
-        AppDatabase.getAppDatabase(this).speakerDao();
     }
 
     private class CustomAdapter extends BaseAdapter{
