@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.net.URI;
 import java.util.ArrayList;
 
 import helperClasses.SharedPreferenceConfig;
@@ -27,7 +28,7 @@ public class LandingPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
-        setTitle("Schedule Assistant        *****" + preferenceConfig.readUserNamePref().toUpperCase() + "***");
+        setTitle("Schedule Assistant                   ["+ preferenceConfig.readUserNamePref().toUpperCase() + "]");
         setContentView(R.layout.activity_landing_page);
         //creating the list
         textLink.add("General Schedule");                //index:0 ->General Schedule
@@ -60,7 +61,7 @@ public class LandingPage extends AppCompatActivity {
                         startActivity(intentSpeaker);     //starting Speakers intent
                         break;
                     case 3:
-                        Intent intentMaps = new Intent(getApplicationContext(), MapsActivity.class);
+                        Intent intentMaps = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?'160 kendal ave Toronto'"));
                         startActivity(intentMaps);     //starting Maps intent
                         break;
                     case 4:

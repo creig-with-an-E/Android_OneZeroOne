@@ -20,12 +20,15 @@ public class SpeakersActivity extends AppCompatActivity {
     String [] firstnames = new String[6];
     String [] lastnames = new String[6];
     String [] bios = new String[6];
+    String [] emails = new String[6];
+    String [] affiliations = new String[6];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferenceConfig preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
-        setTitle("Schedule Assistant        *****" + preferenceConfig.readUserNamePref().toUpperCase() + "***");
+        setTitle("Schedule Assistant                   ["+ preferenceConfig.readUserNamePref().toUpperCase() + "]");
         setContentView(R.layout.activity_speakers);
         listview = findViewById(R.id.SpeakerlistView);
 
@@ -38,9 +41,14 @@ public class SpeakersActivity extends AppCompatActivity {
                 String fn = cursor.getString(cursor.getColumnIndex("firstname"));
                 String ln = cursor.getString(cursor.getColumnIndex("lastname"));
                 String bio = cursor.getString(cursor.getColumnIndex("bio"));
+                String email = cursor.getString(cursor.getColumnIndex("email"));
+                String affiliation = cursor.getString(cursor.getColumnIndex("Affiliation"));
+
                 firstnames[counter] = fn;
                 lastnames[counter] =ln;
                 bios[counter] = bio;
+                emails[counter] = email;
+                affiliations[counter] = affiliation;
                 Log.d("names",firstnames[counter]);
                 counter++;
             }while(cursor.moveToNext());
@@ -57,7 +65,8 @@ public class SpeakersActivity extends AppCompatActivity {
                 intent.putExtra("first",firstnames[position]);
                 intent.putExtra("last",lastnames[position]);
                 intent.putExtra("bio",bios[position]);
-
+                intent.putExtra("email",emails[position]);
+                intent.putExtra("affiliation",affiliations[position]);
                 startActivity(intent);
             }
         });

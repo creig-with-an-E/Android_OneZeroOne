@@ -11,7 +11,7 @@ public class SponsorsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferenceConfig preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
-        setTitle("Schedule Assistant        *****" + preferenceConfig.readUserNamePref().toUpperCase() + "***");
+        setTitle("Schedule Assistant                   ["+ preferenceConfig.readUserNamePref().toUpperCase() + "]");
         setContentView(R.layout.activity_sponsors);
     }
 }

@@ -11,7 +11,7 @@ public class ListAttendeesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
-        setTitle("Schedule Assistant        *****" + preferenceConfig.readUserNamePref().toUpperCase() + "***");
+        setTitle("Schedule Assistant                   ["+ preferenceConfig.readUserNamePref().toUpperCase() + "]");
         setContentView(R.layout.activity_list_attendees);
     }
 }

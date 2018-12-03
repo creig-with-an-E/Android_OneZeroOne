@@ -26,7 +26,7 @@ public class SurveyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferenceConfig preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
-        setTitle("Schedule Assistant        *****" + preferenceConfig.readUserNamePref().toUpperCase() + "***");
+        setTitle("Schedule Assistant                   ["+ preferenceConfig.readUserNamePref().toUpperCase() + "]");
         setContentView(R.layout.activity_survey);
 
         q1 = findViewById(R.id.question1);
@@ -37,7 +37,7 @@ public class SurveyActivity extends AppCompatActivity {
 
     public void save(View view) {
         String timestamp=new SimpleDateFormat("yyyy-MM-dd.HH:mm:ss").format(new Date());
-        String space ="\t";
+        String space ="\n";
 
         final String FILE_NAME = "survey.txt";
         OutputStream fos =null;
@@ -45,7 +45,7 @@ public class SurveyActivity extends AppCompatActivity {
         try {
             //JSONObject data=newJson.makeJSON(timestamp,q1.getText().toString(),q2.getText().toString(),q3.getText().toString());
             StringBuilder sb = new StringBuilder();
-            sb.append("\n" + timestamp + "\t").append(q1.getText().toString() + space).append(q2.getText().toString() + space).append(q3.getText().toString());
+            sb.append("\n" + timestamp + "\t").append("\tQuestion 1: " + q1.getText().toString() + space).append("\t\t\t\tQuestion 2: " + q2.getText().toString() + space).append("\t\t\t\tQuestion 3: " + q3.getText().toString());
             fos = openFileOutput(FILE_NAME,MODE_APPEND);
             fos.write(sb.toString().getBytes());
 
