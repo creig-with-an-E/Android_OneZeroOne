@@ -38,7 +38,8 @@ public class LandingPage extends AppCompatActivity {
         textLink.add("List of attendees");              //index:4  ->List attendees
         textLink.add("Sponsors");                       //index:5  ->Sponsors
         textLink.add("Twitter");                        //index:6  ->twitter
-        textLink.add("Survey");
+        textLink.add("Survey");                         //index 7
+        //link for the sensor
 
         ListView listView = findViewById(R.id.listview);
         CustomAdapter customAdapter = new CustomAdapter();
